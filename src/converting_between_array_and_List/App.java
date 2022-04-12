@@ -67,10 +67,24 @@ public class App {
 		list2.set(1, "test"); //throws UnsupportedOperationException
 		
 		
+		//-----------------------------
+		//Using Varargs to Create a List  (this is a cool way)
+		//------------------------------
+		List<String> list3 = Arrays.asList("one", "two");
+		List<String> list4 = List.of("one", "two");
 		
+		/*Note: both methods create fixed-size arrays.
+		 * If you need to add or remove elements, you will need to create an ArrayList 
+		 * using the constructor
+		 */
 		
+		List<String> fixedSizeList = Arrays.asList("a", "b", "c");
+		List<String> expandableList = new ArrayList<>(fixedSizeList);
 		
+		fixedSizeList.add("d"); //throws UnsupportedOperationException
+		expandableList.add("d");
 		
+		System.out.println(expandableList);
 		
 
 	}
